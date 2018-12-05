@@ -1,0 +1,6 @@
+#tp @a 투표장소
+tag @a[tag=!voted_yes] remove voted
+scoreboard players set @a[tag=player,scores={candidate=1}] candidate 2
+scoreboard players set @r[tag=player,scores={candidate=0}] candidate 1
+execute as @a[tag=voted_yes,tag=player] run scoreboard players add @p[scores={candidate=1}] voted 1
+tellraw @a[tag=player,tag=!voted_yes,gamemode=adventure,tag=!voted] ["",{"text":"\n","color":"none"},{"text":"\n","color":"none"},{"text":"A vote for ","color":"none","bold":false},{"selector":"@p[scores={candidate=1}]","color":"dark_red","bold":true},{"text":".\n","color":"none"},{"text":"Do you want her/him to be executed?","color":"aqua"},{"text":"[Yes]","color":"green","underlined":true,"clickEvent":{"action":"run_command","value":"/function mafia:ingame/day/vote_yes"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"He/She will be executed if "},{"text":"Yes","color":"green"},{"text":" is the majority.","color":"white"}]}}},{"text":" ","color":"none","underlined":false},{"text":"[No]","color":"red","underlined":true,"clickEvent":{"action":"run_command","value":"/function mafia:ingame/day/vote_no"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"He/She will not be executed if "},{"text":"No","color":"red"},{"text":" is the majority.","color":"white"}]}}}]
