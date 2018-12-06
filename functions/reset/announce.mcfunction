@@ -1,1 +1,1 @@
-tellraw @a ["",{"text":"Reloaded!"}]
+tellraw @a ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"text":" Mafia game system reloaded","color":"gold","bold":false}]
