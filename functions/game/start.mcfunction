@@ -20,6 +20,8 @@ tag @p[tag=!player,gamemode=adventure,scores={job-solider=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-mafia 1
 tag @p[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
 
+execute as @a unless entity @s[scores={job-police=1}] run scoreboard players set @s job-police 0
+
 #남은플레이어 랜덤부여
 spreadplayers 99863 100103 0 2 false @e[type=minecraft:player,tag=!player,gamemode=adventure]
 execute as @e[type=minecraft:player,tag=!player] at @s if block ~ ~-1 ~ minecraft:white_wool run scoreboard players set @s job-citizen 1

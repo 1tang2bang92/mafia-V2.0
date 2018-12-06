@@ -8,3 +8,5 @@ function mafia:main/player_count
 function mafia:ingame/day/calculation
 function mafia:ingame/day/vote
 title @a title ["",{"text":"Day "},{"score":{"name":"Date","objective":"master"},"color":"gold","bold":true},{"text":" has begun!","color":"white","bold":false}]
+
+tag @a[tag=used-abil] remove used-abil
