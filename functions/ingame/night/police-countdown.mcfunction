@@ -1,1 +1,0 @@
-function mafia:ingame/night/police-countdown
