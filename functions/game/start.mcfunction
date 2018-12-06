@@ -1,24 +1,24 @@
 #직업부여
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-mafia 1
-tag @a[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-doctor 1
-tag @a[tag=!player,gamemode=adventure,scores={job-doctor=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-doctor=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-police 1
-tag @a[tag=!player,gamemode=adventure,scores={job-police=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-police=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citizen 1
-tag @a[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citizen 1
-tag @a[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-spy 1
-tag @a[tag=!player,gamemode=adventure,scores={job-spy=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-spy=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citizen 1
-tag @a[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citizen 1
-tag @a[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-soldier 1
-tag @a[tag=!player,gamemode=adventure,scores={job-solider=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-solider=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-mafia 1
-tag @a[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
 
 #남은플레이어 랜덤부여
 spreadplayers 99863 100103 0 2 false @e[type=minecraft:player,tag=!player,gamemode=adventure]
@@ -56,6 +56,9 @@ execute positioned 1108 200 1125 run tag @a[distance=..5,tag=!player,gamemode=ad
 #execute as @e[name=location7] at @s run tp @r[tag=player] @s
 #execute as @e[name=location8] at @s run tp @r[tag=player] @s
 tp @a 1108 109 1125
+
+#능력 아이템 부여
+function mafia:ingame/night/ability
 
 #안내
 function mafia:game/start_announce
