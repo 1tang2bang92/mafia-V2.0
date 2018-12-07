@@ -1,4 +1,4 @@
-#°ÔÀÓ·ê
+#ï¿½ï¿½ï¿½Ó·ï¿½
 gamerule announceAdvancements false
 gamerule commandBlockOutput false
 gamerule doDaylightCycle false
@@ -16,7 +16,7 @@ gamerule showDeathMessages false
 gamerule spawnRadius 0
 gamerule spectatorsGenerateChunks true
 
-#¿ÀºêÁ§Æ¼ºê Áö¿ì±â
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 scoreboard objectives remove job-mafia
 scoreboard objectives remove job-spy
 scoreboard objectives remove job-police
@@ -37,12 +37,13 @@ scoreboard objectives remove LT
 scoreboard objectives remove master
 scoreboard objectives remove Timer
 scoreboard objectives remove candidate
+scoreboard obejctives reomve invisible
 
-#ÆÀ Áö¿ì±â
+#ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 team remove Mafia
 team remove Citizen
 
-#¿ÀºêÁ§Æ¼ºê »ý¼º
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 scoreboard objectives add job-mafia dummy
 scoreboard objectives add job-spy dummy
 scoreboard objectives add job-police dummy
@@ -59,6 +60,7 @@ scoreboard objectives add voted dummy
 scoreboard objectives add result-vote dummy
 scoreboard objectives add rightC minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add candidate dummy
+scoreboard obejctives add invisible
 
 scoreboard objectives add LT dummy "Life Time"
 scoreboard objectives add master dummy "Master Number Storage"
@@ -72,6 +74,6 @@ scoreboard players set 1200 master 1200
 scoreboard players set 2 master 2
 scoreboard players set GameLength master 5
 
-#ÆÀ »ý¼º
+#ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 team add Mafia
 team add Citizen
