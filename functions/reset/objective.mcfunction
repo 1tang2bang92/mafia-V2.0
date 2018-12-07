@@ -77,3 +77,11 @@ scoreboard players set GameLength master 5
 #�� ����
 team add Mafia
 team add Citizen
+
+#팀 기본 옵션
+team modify Mafia nametagVisibility hideForOtherTeams
+team modify Mafia friendlyFire false
+team modify Mafia seeFriendlyInvisibles true
+
+team modify Citizen nametagVisibility hideForOwnTeam
+team modify Citizen friendlyFire false
