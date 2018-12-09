@@ -31,5 +31,4 @@ effect clear @a minecraft:weakness
 effect clear @a minecraft:wither
 
 effect give @a minecraft:instant_health 1 255 true
-effect give @a minecraft:night_vision 100000 255 true
 effect give @a minecraft:resistance 100000 5 true

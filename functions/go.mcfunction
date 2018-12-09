@@ -26,3 +26,6 @@ execute if score GameStatus master matches ..0 as @e[tag=Pause] at @s run tp @p[
 execute if score GameStatus master matches ..0 if score CountDown master matches 1 run tellraw @a ["",{"text":"A player has left the game. Would you like to continue without him? \n"},{"text":"[Yes]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/execute if score GameStatus master matches ..0 run function mafia:game/resume_game"}}]
 execute if score GameStatus master matches ..0 if score TotalPlayerCount master = CurrentPlayerCount master run function mafia:game/resume_game
 execute if entity @e[tag=Pause] if score GameStatus master matches 1.. run kill @e[tag=Pause]
+
+#Äð´Ù¿î
+scoreboard players remove @a[scores={cool=1..}] cool 1

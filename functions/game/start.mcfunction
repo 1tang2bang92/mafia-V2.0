@@ -1,24 +1,24 @@
 #직업부여
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-mafia 1
-tag @a[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-doctor 1
-tag @a[tag=!player,gamemode=adventure,scores={job-doctor=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-doctor=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-police 1
-tag @a[tag=!player,gamemode=adventure,scores={job-police=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-police=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citizen 1
-tag @a[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citizen 1
-tag @a[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-spy 1
-tag @a[tag=!player,gamemode=adventure,scores={job-spy=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-spy=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citizen 1
-tag @a[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citizen 1
-tag @a[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-soldier 1
-tag @a[tag=!player,gamemode=adventure,scores={job-solider=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-solider=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-mafia 1
-tag @a[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
 
 execute as @a unless entity @s[scores={job-police=1}] run scoreboard players set @s job-police 0
 

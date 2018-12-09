@@ -1,2 +1,3 @@
 execute if entity @e[tag=police-target,team=Mafia] run tellraw @p[scores={job-police=1}] ["",{"text":"[Mafia V2.0] ","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"selector":"@p[tag=police-target]","color":"blue","bold":false},{"text":"는 ","color":"white"},{"text":"마피아","color":"red"},{"text":" 입니다.","color":"white"}]
 execute if entity @e[tag=police-target,team=Citizen] run tellraw @p[scores={job-police=1}] ["",{"text":"[Mafia V2.0] ","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"selector":"@p[tag=police-target]","color":"blue","bold":false},{"text":"는 ","color":"white"},{"text":"시민","color":"green"},{"text":" 입니다.","color":"white"}]
+tag @p[scores={job-police=1}] add used-abil
