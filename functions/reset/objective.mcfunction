@@ -37,7 +37,7 @@ scoreboard objectives remove LT
 scoreboard objectives remove master
 scoreboard objectives remove Timer
 scoreboard objectives remove candidate
-scoreboard obejctives reomve invisible
+scoreboard obejectives reomve invisible
 scoreboard objectives remove deathCount
 
 #�� �����
