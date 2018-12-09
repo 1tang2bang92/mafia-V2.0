@@ -1,2 +1,0 @@
-execute as @p[tag=police-targe,team=Mafia] run tellraw @p[scores={job-police=1}] ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true},{"text":" 당신이 구속한 플레이어는 ","color":"gold","bold":false},{"text":"마피아세력","color":"red"},{"text":"입니다.","color":"gold"}]
-execute as @p[tag=police-targe,team=Citizen] run tellraw @p[scores={job-police=1}] ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true},{"text":" 당신이 구속한 플레이어는 ","color":"gold","bold":false},{"text":"시민세력","color":"aqua"},{"text":"입니다.","color":"gold"}]
