@@ -1,6 +1,6 @@
-#mafia-loop
-scoreboard players add @s master 1
+#mafia
 scoreboard players set @s rightC 0
+
 #은신상태가 아닐때 (scores={invisible=0})
 effect give @s minecraft:invisibility 100000 255
 effect give @s minecraft:speed 100000 5 true
