@@ -37,7 +37,7 @@ scoreboard objectives remove LT
 scoreboard objectives remove master
 scoreboard objectives remove Timer
 scoreboard objectives remove candidate
-scoreboard obejectives reomve invisible
+scoreboard objectives reomve invisible
 scoreboard objectives remove deathCount
 
 #�� �����
@@ -61,7 +61,7 @@ scoreboard objectives add voted dummy
 scoreboard objectives add result-vote dummy
 scoreboard objectives add rightC minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add candidate dummy
-scoreboard obejctives add invisible dummy
+scoreboard objectives add invisible dummy
 scoreboard objectives add deathCount deathCount
 
 scoreboard objectives add LT dummy "Life Time"
