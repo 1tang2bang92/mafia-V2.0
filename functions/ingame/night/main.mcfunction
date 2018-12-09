@@ -1,8 +1,5 @@
 #targeting
-execute as @a[scores={job-mafia=1,scores={rightC=1..}}] positioned ~ ~1.62 ~ run function mafia:ingame/night/mafia
-execute as @a[scores={job-police=1,scores={rightC=1..}}] positioned ~ ~1.62 ~ run function mafia:ingame/night/police-loop
-execute as @a[scores={job-doctor=1,scores={rightC=1..}}] positioned ~ ~1.62 ~ run function mafia:ingame/night/doctor-loop
-execute as @a[scores={job-mafia=1,rightC=1..}] at @s positioned ~ ~1.62 ~ run function mafia:ingame/night/mafia-ability
+execute as @a[scores={job-mafia=1,rightC=1..}] at @s positioned ~ ~1.62 ~ run function mafia:ingame/night/mafia
 execute as @a[scores={job-police=1,rightC=1..},tag=!used-abil] at @s positioned ~ ~1.62 ~ run function mafia:ingame/night/police-loop
 execute as @a[scores={job-doctor=1,rightC=1..}] at @s positioned ~ ~1.62 ~ run function mafia:ingame/night/doctor-loop
 
