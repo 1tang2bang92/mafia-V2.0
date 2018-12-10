@@ -1,10 +1,8 @@
+
 #targeting
 execute as @a[scores={job-mafia=1,rightC=1..}] at @s positioned ~ ~1.62 ~ run function mafia:ingame/night/mafia
 execute as @a[scores={job-police=1,rightC=1..,cool=0}] at @s positioned ~ ~1.62 ~ run function mafia:ingame/night/police-loop
 execute as @a[scores={job-doctor=1,rightC=1..}] at @s positioned ~ ~1.62 ~ run function mafia:ingame/night/doctor-loop
-
-#scoreboard sets
-scoreboard players set @a[scores={rightC=1..}] rightC 0
 
 #police imprisonment tp
 execute if entity @e[tag=police] run tp @a[tag=police-target] @e[type=minecraft:area_effect_cloud,limit=1,tag=police]

@@ -61,7 +61,7 @@ tp @a 1108 109 1125
 
 #안내
 function mafia:game/start_announce
-
+function mafia:ingame/night/ability
 #이펙트 클리어
 effect clear @a[tag=player] minecraft:resistance
 

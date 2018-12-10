@@ -78,6 +78,9 @@ scoreboard players set 1200 master 1200
 scoreboard players set 2 master 2
 scoreboard players set GameLength master 5
 
+scoreboard players set @a cool 0
+scoreboard players set @a rightC 0
+
 #�� ����
 team add Mafia
 team add Citizen

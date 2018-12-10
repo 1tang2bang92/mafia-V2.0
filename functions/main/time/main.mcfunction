@@ -5,3 +5,10 @@ execute if score GameStatus master matches 4 if score TimeStatus master matches 
 execute if score GameStatus master matches 4 if score TimeStatus master matches 4 run function mafia:main/time/dawn
 execute if score GameStatus master matches 3 if score TimeStatus master matches 1 run function mafia:main/time/day
 execute if score GameStatus master matches 3.. run function mafia:main/player_count
+
+#faint
+execute as @a[tag=player,scores={deathCount=1..}] at @s run function mafia:ingame/night/faint
+execute as @a[tag=player,tag=death] at @s run function mafia:ingame/night/faint-loop
+
+#scoreboard sets
+scoreboard players set @a[scores={rightC=1..}] rightC 0
