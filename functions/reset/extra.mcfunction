@@ -1,4 +1,4 @@
-clear @a[tag=player]
+clear @a
 tag @a[tag=player] remove player
 tag @a[tag=voted] remove voted
 tag @a[tag=voted_yes] remove voted_yes
