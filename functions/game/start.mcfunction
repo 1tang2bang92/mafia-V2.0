@@ -70,6 +70,10 @@ execute positioned 1108 200 1125 run tag @a[distance=..5,tag=!player,gamemode=ad
 #execute as @e[name=location8] at @s run tp @r[tag=player] @s
 tp @a 1108 109 1125
 
+#플레이어 아이디
+scoreboard players set @r[tag=player,scores={Id=..0}] Id 1
+execute if entity @p[tag=player,scores={Id=..0}] run function mafia:game/start_id
+
 #안내
 function mafia:game/start_announce
 function mafia:ingame/night/ability
