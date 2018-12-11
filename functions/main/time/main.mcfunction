@@ -9,6 +9,7 @@ execute if score GameStatus master matches 3.. run function mafia:main/player_co
 #faint
 execute as @a[tag=player,scores={deathCount=1..}] at @s run function mafia:ingame/night/faint
 execute as @a[tag=player,tag=death] at @s run function mafia:ingame/night/faint-loop
+execute as @a[tag=player,tag=death,scores={job-soldier=1}] at @s run function mafia:ingame/night/soldier-faint
 
 #scoreboard sets
 scoreboard players set @a[scores={rightC=1..}] rightC 0

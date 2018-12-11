@@ -9,4 +9,4 @@ execute as @a[scores={job-drugaddict=1}] run give @s carrot_on_a_stick{CustomMod
 execute as @a[scores={job-robber=1}] run give @s carrot_on_a_stick{CustomModelData:9} 1
 execute as @a[scores={job-detective=1}] run give @s carrot_on_a_stick{CustomModelData:10} 1
 
-scoreboard players set @a[scores={job-doctor=1}] invisible 0
+scoreboard players set @a[scores={job-mafia=1}] invisible 0
