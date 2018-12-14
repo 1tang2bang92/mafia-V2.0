@@ -16,7 +16,7 @@ tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citizen 1
 tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-soldier 1
-tag @p[tag=!player,gamemode=adventure,scores={job-solider=1}] add player
+tag @p[tag=!player,gamemode=adventure,scores={job-soldier=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-mafia 1
 tag @p[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
 

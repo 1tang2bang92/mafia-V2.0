@@ -17,5 +17,6 @@ tag @a[tag=death] remove death
 kill @e[tag=deathMarker]
 
 tag @a[tag=used-abil] remove used-abil
+execute if entity @p[tag=reporter-target] run function mafia:ingame/day/report
 
 function mafia:ingame/day/vote
