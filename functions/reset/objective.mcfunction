@@ -16,7 +16,7 @@ gamerule showDeathMessages false
 gamerule spawnRadius 0
 gamerule spectatorsGenerateChunks true
 
-#������Ƽ�� �����?
+#������Ƽ�� �����?
 scoreboard objectives remove job-mafia
 scoreboard objectives remove job-spy
 scoreboard objectives remove job-police
@@ -40,8 +40,9 @@ scoreboard objectives remove candidate
 scoreboard objectives remove invisible
 scoreboard objectives remove deathCount
 scoreboard objectives remove cool
+scoreboard objectives remove Id
 
-#�� �����?
+#�� �����?
 team remove Mafia
 team remove Citizen
 
@@ -65,6 +66,7 @@ scoreboard objectives add candidate dummy
 scoreboard objectives add invisible dummy
 scoreboard objectives add deathCount deathCount
 scoreboard objectives add cool dummy
+scoreboard objectives add Id dummy
 
 scoreboard objectives add LT dummy "Life Time"
 scoreboard objectives add master dummy "Master Number Storage"
@@ -86,7 +88,7 @@ scoreboard players set @a Id 0
 team add Mafia
 team add Citizen
 
-#?� 기본 ?�션
+#?� 기본 ?�션
 team modify Mafia nametagVisibility hideForOtherTeams
 team modify Mafia friendlyFire false
 team modify Mafia seeFriendlyInvisibles true
