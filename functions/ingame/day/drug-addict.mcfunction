@@ -1,0 +1,3 @@
+#drug-addict function
+
+loot

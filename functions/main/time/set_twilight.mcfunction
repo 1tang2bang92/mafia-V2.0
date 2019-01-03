@@ -8,3 +8,6 @@ scoreboard players set @a voted 0
 scoreboard players reset @a result-vote
 title @a title ["",{"text":"The "},{"text":"Night ","color":"dark_red"},{"text":"has begun!","color":"white"}]
 title @a subtitle [""]
+
+#drug-addict
+function mafia:ingame/day/drug-addict
