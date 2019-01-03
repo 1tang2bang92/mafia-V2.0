@@ -1,3 +1,3 @@
 #drug-addict function
 
-loot
+loot give @a[scores={job-drugaddict=0}] loot mafia
