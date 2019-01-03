@@ -1,3 +1,9 @@
+summon minecraft:armor_stand ~ 200 ~ {CustomName:"\"TimeStamp\"",Invulnerable:1,Marker:1,NoGravity:1,Tags:["undefined"]}
+execute as @p[scores={job-robber=1,rightC=1..}] store result entity @e[name=TimeStamp,tag=undefined,limit=1] Rotation.[0] float 1 run scoreboard players get @p Id
+execute as @s store result entity @e[name=TimeStamp,tag=undefined,limit=1] Rotation.[1] float 1 run scoreboard players get @p Id
+execute store result entity @e[name=TimeStamp,limit=1,tag=undefined] AbsorptionAmount float 1 run scoreboard players get Time master
+tag @e[name=TimeStamp,tag=undefined,limit=1] remove undefined
+
 tag @s add robber-target
 
 execute if entity @s[scores={job-mafia=1}] run gamemode spectator @s
