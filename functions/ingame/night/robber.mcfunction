@@ -8,6 +8,7 @@ tag @p[distance=0] add robber-target
 
 execute if entity @p[distance=0,scores={job-mafia=1}] run gamemode spectator @p[distance=0]
 execute if entity @p[distance=0,scores={job-mafia=1}] run tag @p[distance=0] remove player
+scoreboard players operation TotalPlayerCount master = CurrentPlayerCount master
 
 scoreboard players operation @s job-citizen >< @p[distance=0] job-citizen
 scoreboard players operation @s job-detective >< @p[distance=0] job-detective
@@ -22,5 +23,4 @@ scoreboard players operation @s job-spy >< @p[distance=0] job-spy
 scoreboard players operation @s job-mafia >< @p[distance=0] job-mafia
 
 scoreboard players set @p[distance=0,tag=player] job-citizen 1
-
-scoreboard players operation TotalPlayerCount master = CurrnetPlayerCount master
+team join Mafia @s[scores={job-mafia=1}]

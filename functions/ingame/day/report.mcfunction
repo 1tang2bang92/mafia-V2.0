@@ -7,4 +7,5 @@ execute if entity @p[tag=reporter-target,scores={job-robber=1}] run tellraw @a[t
 execute if entity @p[tag=reporter-target,scores={job-politician=1}] run tellraw @a[tag=player] ["",{"selector":"@p[tag=reporter-target]"},{"text":"의 직업은 "},{"text":"정치인","color":"dark_red"},{"text":"입니다!","color":"white"}]
 execute if entity @p[tag=reporter-target,scores={job-detective=1}] run tellraw @a[tag=player] ["",{"selector":"@p[tag=reporter-target]"},{"text":"의 직업은 "},{"text":"탐정","color":"dark_red"},{"text":"입니다!","color":"white"}]
 execute if entity @p[tag=reporter-target,scores={job-drugaddict=1}] run tellraw @a[tag=player] ["",{"selector":"@p[tag=reporter-target]"},{"text":"의 직업은 "},{"text":"마약중독자","color":"dark_red"},{"text":"입니다!","color":"white"}]
-execute if entity @p[tag=reporter-target,scores={job-mafia=1}] run tellraw @s ["",{"selector":"@p[tag=reporter-target]"},{"text":"의 직업은 "},{"text":"마피아","color":"dark_red"},{"text":"입니다!","color":"white"}] 
+execute if entity @p[tag=reporter-target,scores={job-mafia=1}] run tellraw @a[tag=player] ["",{"selector":"@p[tag=reporter-target]"},{"text":"의 직업은 "},{"text":"마피아","color":"dark_red"},{"text":"입니다!","color":"white"}] 
+tag @a[tag=reporter-target] remove reporter-target
