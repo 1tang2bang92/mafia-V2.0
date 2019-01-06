@@ -16,6 +16,7 @@ tag @a[tag=death] remove player
 tag @a[tag=death] remove death
 kill @e[tag=deathMarker]
 
+execute if entity @p[scores={job-detective=1},tag=used-abil] at @p[sort=random,scores={job-detective=1},tag=used-abil] run function mafia:ingame/day/detective-report
 tag @a[tag=used-abil] remove used-abil
 execute if entity @p[tag=reporter-target] run function mafia:ingame/day/report
 
