@@ -41,6 +41,9 @@ scoreboard objectives remove invisible
 scoreboard objectives remove deathCount
 scoreboard objectives remove cool
 scoreboard objectives remove Id
+scoreboard objectives remove TS-user
+scoreboard objectives remove TS-victim
+scoreboard objectives remove TS-time
 
 #�� �����?
 team remove Mafia
@@ -67,6 +70,10 @@ scoreboard objectives add invisible dummy
 scoreboard objectives add deathCount deathCount
 scoreboard objectives add cool dummy
 scoreboard objectives add Id dummy
+
+scoreboard objectives add TS-user dummy "Time Stamp - User Id"
+scoreboard objectives add TS-victim dummy "Time Stamp - Victim Id"
+scoreboard objectives add TS-time dummy "Time Stamp - Time"
 
 scoreboard objectives add LT dummy "Life Time"
 scoreboard objectives add master dummy "Master Number Storage"
