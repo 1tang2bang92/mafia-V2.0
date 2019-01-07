@@ -20,4 +20,6 @@ execute if entity @p[scores={job-detective=1},tag=used-abil] at @p[sort=random,s
 tag @a[tag=used-abil] remove used-abil
 execute if entity @p[tag=reporter-target] run function mafia:ingame/day/report
 
+kill @e[name=TimeStamp]
+
 function mafia:ingame/day/vote

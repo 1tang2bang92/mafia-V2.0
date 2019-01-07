@@ -14,4 +14,5 @@ tag @p[scores={job-doctor=1}] add used-abil
 scoreboard players set @p[scores={job-doctor=1}] master 0
 
 tellraw @s ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"text":" 의사","color":"white","bold":false},{"text":"가 당신을 구했습니다.","color":"gold"}]
-execute as @e[type=minecraft:armor_stand,limit=1] run function mafia:ingame/night/tp-loop
+
+tag @s remove doctor-target

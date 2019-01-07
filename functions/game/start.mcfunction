@@ -1,4 +1,4 @@
-#Á÷¾÷ºÎ¿©
+#ï¿½ï¿½ï¿½ï¿½ï¿½Î¿ï¿½
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-mafia 1
 tag @p[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-doctor 1
@@ -20,7 +20,7 @@ tag @p[tag=!player,gamemode=adventure,scores={job-soldier=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-mafia 1
 tag @p[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
 
-#³²ÀºÇÃ·¹ÀÌ¾î ·£´ýºÎ¿©
+#ï¿½ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Î¿ï¿½
 spreadplayers 99863 100103 0 2 false @e[type=minecraft:player,tag=!player,gamemode=adventure]
 execute as @e[type=minecraft:player,tag=!player] at @s if block ~ ~-1 ~ minecraft:white_wool run scoreboard players set @s job-citizen 1
 execute as @e[type=minecraft:player,tag=!player] at @s if block ~ ~-1 ~ minecraft:orange_wool run scoreboard players set @s job-mafia 1
@@ -52,14 +52,15 @@ team join Citizen @a[scores={job-spy=1}]
 team join Citizen @a[scores={job-police=1}]
 team join Citizen @a[scores={job-doctor=1}]
 team join Citizen @a[scores={job-robber=1}]
+team join Citizen @a[scores={job-reporter=1}]
 team join Citizen @a[scores={job-politician=1}]
 team join Citizen @a[scores={job-detective=1}]
 team join Citizen @a[scores={job-drugaddict=1}]
 
-#ÇÃ·¹ÀÌ¾î È®ÀÎ
+#ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ È®ï¿½ï¿½
 execute positioned 1108 200 1125 run tag @a[distance=..5,tag=!player,gamemode=adventure] add player
 
-#ÅÚÆ÷ ½ºÇÁ·¹µå ÇÃ·¹ÀÌ¾î¸¦ ¾²´Â°Íµµ ÁÁ¾Æº¸ÀÓ
+#ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½ï¿½ï¿½Â°Íµï¿½ ï¿½ï¿½ï¿½Æºï¿½ï¿½ï¿½
 #execute as @e[name=location1] at @s run tp @r[tag=player] @s
 #execute as @e[name=location2] at @s run tp @r[tag=player] @s
 #execute as @e[name=location3] at @s run tp @r[tag=player] @s
@@ -70,16 +71,16 @@ execute positioned 1108 200 1125 run tag @a[distance=..5,tag=!player,gamemode=ad
 #execute as @e[name=location8] at @s run tp @r[tag=player] @s
 tp @a 1108 109 1125
 
-#ÇÃ·¹ÀÌ¾î ¾ÆÀÌµð
+#ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½Ìµï¿½
 scoreboard players set @r[tag=player,scores={Id=..0}] Id 1
 execute if entity @p[tag=player,scores={Id=..0}] run function mafia:game/start_id
 
-#¾È³»
+#ï¿½È³ï¿½
 function mafia:game/start_announce
 function mafia:ingame/night/ability
-#ÀÌÆåÆ® Å¬¸®¾î
+#ï¿½ï¿½ï¿½ï¿½Æ® Å¬ï¿½ï¿½ï¿½ï¿½
 effect clear @a[tag=player] minecraft:resistance
 
-#ÀÎ°ÔÀÓÀ¸·Î ³Ñ±â±â
+#ï¿½Î°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ±ï¿½ï¿½
 time set 0d
 execute if score GameStatus master matches 2 run schedule function mafia:main/time/set_twilight 5s
