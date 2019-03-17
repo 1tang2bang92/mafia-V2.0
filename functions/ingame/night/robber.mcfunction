@@ -25,8 +25,13 @@ scoreboard players operation @s job-mafia >< @p[distance=0] job-mafia
 scoreboard players set @p[distance=0,tag=player] job-citizen 1
 scoreboard players set @s job-robber 0
 scoreboard players set @s master 6
+scoreboard players set @s rightC 0
 team join Mafia @s[scores={job-mafia=1}]
 
 tellraw @s ["",{"selector":"@p[distance=0]"},{"text":"의 능력을 훔쳤습니다."}]
-
+tellraw @s[scores={job-detective=1}] ["",{"text":"이제 당신의 직업은"},{"text":"탐정"},{"text":" 입니다."}]
+tellraw @s[scores={job-police=1}] ["",{"text":"이제 당신의 직업은"},{"text":"경찰"},{"text":" 입니다."}]
+tellraw @s[scores={job-doctor=1}] ["",{"text":"이제 당신의 직업은"},{"text":"의사"},{"text":" 입니다."}]
+tellraw @s[scores={job-politician=1}] ["",{"text":"이제 당신의 직업은"},{"text":"정치인"},{"text":" 입니다."}]
+tellraw @s[scores={job-reporter=1}] ["",{"text":"이제 당신의 직업은"},{"text":"기자"},{"text":" 입니다."}]
 tag @p[distance=0] remove robber-target

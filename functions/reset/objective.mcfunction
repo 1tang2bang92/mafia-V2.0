@@ -85,11 +85,40 @@ scoreboard players set TimeStatus master 1
 scoreboard players set CurrentPlayerCount master 0
 scoreboard players set 1200 master 1200
 scoreboard players set 2 master 2
+scoreboard players set -1 master -1
 scoreboard players set GameLength master 5
+scoreboard players set tw_left master 16000
+scoreboard players set md_left master 20000
+scoreboard players set dn_left master 24000
 
 scoreboard players set @a cool 0
 scoreboard players set @a rightC 0
 scoreboard players set @a Id 0
+scoreboard players set invisible 0
+
+#bossbar세팅
+bossbar remove mafia:twilight
+bossbar remove mafia:midnight
+bossbar remove mafia:dawn
+
+bossbar add mafia:twilight "Until Kill Time"
+bossbar add mafia:midnight "Kill Time"
+bossbar add mafia:dawn "Until Sunrise"
+
+bossbar set mafia:twilight color yellow
+bossbar set mafia:midnight color red
+bossbar set mafia:dawn color green
+
+bossbar set mafia:twilight max 4000
+bossbar set mafia:midnight max 4000
+bossbar set mafia:dawn max 4000
+
+bossbar set mafia:twilight players @a
+bossbar set mafia:midnight players @a
+bossbar set mafia:dawn players @a
+bossbar set mafia:twilight visible false
+bossbar set mafia:midnight visible false
+bossbar set mafia:dawn visible false
 
 #�� ����
 team add Mafia

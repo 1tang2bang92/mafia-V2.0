@@ -1,14 +1,18 @@
-time add 1d
+function mafia:main/player_count
+function mafia:ingame/day/calculation
+
+gamemode adventure @a[tag=player]
+
+scoreboard players add Date master 1
 time set noon
 scoreboard players set TimeStatus master 1
 scoreboard players set GameStatus master 3
 scoreboard players set @a candidate 0
 tag @a[tag=voted_yes] remove voted_yes
-function mafia:main/player_count
-function mafia:ingame/day/calculation
+
 title @a title ["",{"text":"Day "},{"score":{"name":"Date","objective":"master"},"color":"gold","bold":true},{"text":" has begun!","color":"white","bold":false}]
 
-tellraw @a[tag=death] ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"text":" 낮이 될 때까지 아무도 당신을 구하지 않아 사망하였습니다.","color":"gold"}]
+tellraw @a[tag=death] ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"text":" 낮이 될 때까지 구조받지 못해 사망하였습니다.","color":"gold"}]
 execute if entity @p[tag=death] run tellraw @a[tag=!death] ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"text":" "},{"selector":"@a[tag=death]"},{"text":"가 사망하였습니다.","color":"gold"}]
 execute as @a[tag=death] run scoreboard players remove TotalPlayerCount master 1
 gamemode spectator @a[tag=death]
@@ -22,4 +26,6 @@ execute if entity @p[tag=reporter-target] run function mafia:ingame/day/report
 
 kill @e[name=TimeStamp]
 
-function mafia:ingame/day/vote
+execute if score GameStatus master matches 3.. run function mafia:ingame/day/vote
+
+bossbar set mafia:dawn visible false

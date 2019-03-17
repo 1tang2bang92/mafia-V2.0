@@ -11,3 +11,7 @@ title @a subtitle [""]
 
 #drug-addict
 function mafia:ingame/day/drug-addict
+
+bossbar set mafia:twilight visible true
+
+gamemode survival @a[tag=player]

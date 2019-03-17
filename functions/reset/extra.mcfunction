@@ -12,4 +12,3 @@ tag @a[tag=police-target] remove police-target
 tag @a[tag=spy-target] remove spy-target
 
 kill @e[name=TimeStamp]
-time set 0d

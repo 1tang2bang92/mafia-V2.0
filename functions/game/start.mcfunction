@@ -82,5 +82,19 @@ function mafia:ingame/night/ability
 effect clear @a[tag=player] minecraft:resistance
 
 #�ΰ������� �ѱ��
-time set 0d
+scoreboard players set Date master 0
 execute if score GameStatus master matches 2 run schedule function mafia:main/time/set_twilight 5s
+scoreboard players set @a cool 0
+scoreboard players set @a master 0
+scoreboard players set @a invisible 0
+
+recipe give @a[tag=player] *
+recipe take @a[scores={job-mafia=0}] mafia:wooden_sword
+recipe take @a[scores={job-mafia=0}] mafia:stone_sword
+recipe take @a[scores={job-mafia=0}] mafia:iron_sword
+recipe take @a[scores={job-mafia=0}] mafia:golden_sword
+
+give @a minecraft:wooden_axe
+give @a minecraft:wooden_pickaxe
+give @a minecraft:wooden_shovel
+give @a minecraft:bread 16

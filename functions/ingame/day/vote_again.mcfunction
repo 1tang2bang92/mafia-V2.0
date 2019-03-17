@@ -4,4 +4,5 @@ scoreboard players set @a[scores={result-vote=0}] voted 0
 scoreboard players set @a[scores={result-vote=0}] candidate 0
 tag @a remove voted
 tag @a remove voted_yes
+tag @a[scores={job-politician=1}] add extra-vote
 function mafia:ingame/day/vote

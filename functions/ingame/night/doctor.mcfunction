@@ -7,12 +7,12 @@ tag @e[name=TimeStamp,tag=undefined,limit=1] remove undefined
 tag @s add doctor-target
 
 tag @s remove death
-kill @e[type=minecraft:area_effect_cloud,limit=1]
+kill @e[type=minecraft:area_effect_cloud,tag=deathMarker,limit=1,distance=..1]
 
 tag @p[scores={job-doctor=1}] add used-abil
 
 scoreboard players set @p[scores={job-doctor=1}] master 0
 
-tellraw @s ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"text":" 의사","color":"white","bold":false},{"text":"가 당신을 구했습니다.","color":"gold"}]
+tellraw @s ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"text":" 의사","color":"white","bold":true},{"text":"가 당신을 구했습니다.","color":"gold"}]
 
 tag @s remove doctor-target

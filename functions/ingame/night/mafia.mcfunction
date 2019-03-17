@@ -1,3 +1,4 @@
+particle minecraft:witch ~ ~ ~ 0.5 0.5 0.5 0.1 20 force @a
 scoreboard players add @s invisible 1
 scoreboard players set @s[scores={invisible=2}] invisible 0
 #mafia-loop
@@ -7,6 +8,7 @@ effect give @s minecraft:invisibility 100000 255
 effect give @s minecraft:speed 100000 5 true
 effect give @s minecraft:regeneration 100000 1 true
 effect give @s minecraft:haste 100000 2 true
+#execute if @s[scores={invisible=1}] as @a[team=!Mafia] run summon armor_stand ~ ~ ~ {}
 tellraw @s[scores={invisible=1}] ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true},{"text":" 은신","color":"white","bold":false},{"text":"상태로 전환되었습니다.","color":"gold"}]
 
 #은신 상태일때 (scores={invisible=0})

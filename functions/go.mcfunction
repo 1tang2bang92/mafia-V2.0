@@ -1,31 +1,34 @@
-#ÇÃ·¹ÀÌ¾î¼ö+ÀÌÆåÆ®(alwaays)
+#ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½+ï¿½ï¿½ï¿½ï¿½Æ®(alwaays)
 execute if score GameStatus master matches 1 run effect give @a[gamemode=adventure] resistance 100000 5 true
 execute if score GameStatus master matches 1 store result score TotalPlayerCount master run effect give @a[gamemode=adventure] minecraft:night_vision 20 1 true
 
-#°ÔÀÓÇÃ·¹ÀÌ ±¸°£ÀÔÀå(GameStatus = 1)
+#ï¿½ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(GameStatus = 1)
 execute as @a[x=-4,y=105,z=37,dx=8,dy=8,dz=1,gamemode=adventure] run tellraw @a ["",{"selector":"@s","bold":true},{"text":" has join the game","color":"dark_gray","bold":false}]
+execute as @a[x=-4,y=105,z=37,dx=8,dy=8,dz=1,gamemode=adventure] run effect clear @s
+execute as @a[x=-4,y=105,z=37,dx=8,dy=8,dz=1,gamemode=adventure] run clear @s
 execute if score GameStatus master matches 1 run tp @a[x=-4,y=105,z=37,dx=8,dy=8,dz=1] 1108 200 1125
 execute if score GameStatus master matches 1 store result score CurrentPlayerCount master run xp add @a[gamemode=adventure,x=1090,y=199,z=1106,dx=45,dz=42,dy=5] 0 points
 execute unless score GameStatus master matches 1..2 store result score CurrentPlayerCount master run xp add @a[gamemode=adventure,tag=player] 0 points
 
-#´ë±â½ÇÀÎ¿ø¼ö°¡ ÇÃ·¹ÀÌ¾î¼ö¶û °°À¸¸é °ÔÀÓ½ÃÀÛ Æã¼Ç ½ÇÇà(GameStatus=1)
+#ï¿½ï¿½ï¿½ï¿½ï¿½Î¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(GameStatus=1)
 execute if score GameStatus master matches 1 if score TotalPlayerCount master matches 4.. if score TotalPlayerCount master = CurrentPlayerCount master run scoreboard players set CountDown master 100
 execute if score GameStatus master matches 1 if score TotalPlayerCount master matches 4.. if score TotalPlayerCount master = CurrentPlayerCount master run scoreboard players set GameStatus master 2
 execute if score GameStatus master matches 2 if score TotalPlayerCount master = CurrentPlayerCount master run function mafia:game/start_countdown
 
-#°ÔÀÓÁß µé¾î¿À´Â ÇÃ·¹ÀÌ¾îµé °ü¸®(GameStatus>=3)
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(GameStatus>=3)
+execute if score GameStatus master matches 3.. store result score CurrentPlayerCount master run xp add @a[tag=player] 0 points
 
-
-#°ÔÀÓÁß °ÔÀÓ¿¡ ¼ÓÇØÀÖ´Â ÇÃ·¹ÀÌ¾î°¡ ³ª°£°Í °¨Áö (pause)(GameStatus>=3)
-execute if score GameStatus master matches 3.. unless score TotalPlayerCount master = CurrentPlayerCount master run scoreboard players set GameStatus master -1
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (pause)(GameStatus>=3)
+execute if score GameStatus master matches 3.. if score TotalPlayerCount master > CurrentPlayerCount master run scoreboard players set GameStatus master -1
 execute if score GameStatus master matches -1 run scoreboard players set CountDown master 600
-execute if score GameStatus master matches -1 as @a[tag=player,gamemode=adventure] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["Pause"],Duration:600000}
+execute if score GameStatus master matches -1 as @a[tag=player] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["Pause"],Duration:600000}
 execute if score GameStatus master matches -1 run scoreboard players set GameStatus master 0
 execute if score GameStatus master matches 0 if score CountDown master matches 1.. run scoreboard players remove CountDown master 1
 execute if score GameStatus master matches ..0 as @e[tag=Pause] at @s run tp @p[limit=1,sort=nearest,distance=..1] @s
+execute if score GameStatus master matches ..0 run title @a title ["",{"text":"â–Œâ–Œ"}]
 execute if score GameStatus master matches ..0 if score CountDown master matches 1 run tellraw @a ["",{"text":"A player has left the game. Would you like to continue without him? \n"},{"text":"[Yes]","color":"green","bold":true,"underlined":true,"clickEvent":{"action":"run_command","value":"/execute if score GameStatus master matches ..0 run function mafia:game/resume_game"}}]
 execute if score GameStatus master matches ..0 if score TotalPlayerCount master = CurrentPlayerCount master run function mafia:game/resume_game
 execute if entity @e[tag=Pause] if score GameStatus master matches 1.. run kill @e[tag=Pause]
 
-#Äð´Ù¿î
+#ï¿½ï¿½Ù¿ï¿½
 scoreboard players remove @a[scores={cool=1..}] cool 1
