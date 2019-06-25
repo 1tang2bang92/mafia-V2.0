@@ -7,3 +7,5 @@ execute if score TimeStatus master matches 3 run function mafia:ingame/night/mai
 scoreboard players set md_left master 20000
 scoreboard players operation md_left master -= Time master
 execute store result bossbar mafia:midnight value run scoreboard players get md_left master
+
+bossbar set mafia:midnight name [{"translate":"mafia.game.time.midnight"}," | ",{"translate":"mafia.game.time.current"},{"score":{"name":"Time-Hour","objective":"master"}},":",{"score":{"name":"Time-Minute","objective":"master"}}]

@@ -6,3 +6,5 @@ execute if score Time master matches 16000.. run function mafia:main/time/set_mi
 scoreboard players set tw_left master 16000
 scoreboard players operation tw_left master -= Time master
 execute store result bossbar mafia:twilight value run scoreboard players get tw_left master
+
+bossbar set mafia:twilight name [{"translate":"mafia.game.time.twilight"}," | ",{"translate":"mafia.game.time.current"},{"score":{"name":"Time-Hour","objective":"master"}},":",{"score":{"name":"Time-Minute","objective":"master"}}]

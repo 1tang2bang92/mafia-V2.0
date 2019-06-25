@@ -41,13 +41,16 @@ scoreboard objectives remove invisible
 scoreboard objectives remove deathCount
 scoreboard objectives remove cool
 scoreboard objectives remove Id
+scoreboard objectives remove detail
+scoreboard objectives remove touch
 scoreboard objectives remove TS-user
 scoreboard objectives remove TS-victim
-scoreboard objectives remove TS-time
+scoreboard objectives remove TS-time-h
+scoreboard objectives remove TS-time-m
+scoreboard objectives remove button
 
 #�� �����?
 team remove Mafia
-team remove Citizen
 
 #������Ƽ�� ����
 scoreboard objectives add job-mafia dummy
@@ -73,17 +76,22 @@ scoreboard objectives add Id dummy
 
 scoreboard objectives add TS-user dummy "Time Stamp - User Id"
 scoreboard objectives add TS-victim dummy "Time Stamp - Victim Id"
-scoreboard objectives add TS-time dummy "Time Stamp - Time"
+scoreboard objectives add TS-time-h dummy "Time Stamp - Time - Hour"
+scoreboard objectives add TS-time-m dummy "Time Stamp - Time - Minute"
 
 scoreboard objectives add LT dummy "Life Time"
 scoreboard objectives add master dummy "Master Number Storage"
 scoreboard objectives add Timer dummy "Timer"
 
+scoreboard objectives add touch dummy
+scoreboard objectives add detail dummy
+
+scoreboard objectives add button trigger "What you've pressed"
+
 scoreboard players set PT3 master 3
 scoreboard players set GameStatus master 1
 scoreboard players set TimeStatus master 1
 scoreboard players set CurrentPlayerCount master 0
-scoreboard players set 1200 master 1200
 scoreboard players set 2 master 2
 scoreboard players set -1 master -1
 scoreboard players set GameLength master 5
@@ -95,6 +103,13 @@ scoreboard players set @a cool 0
 scoreboard players set @a rightC 0
 scoreboard players set @a Id 0
 scoreboard players set invisible 0
+
+scoreboard players set 6 master 6
+scoreboard players set 100 master 100
+scoreboard players set 1000 maseter 1000
+
+scoreboard players set Time-Hour master 0
+scoreboard players set Time-Minute master 0
 
 #bossbar세팅
 bossbar remove mafia:twilight
@@ -122,12 +137,8 @@ bossbar set mafia:dawn visible false
 
 #�� ����
 team add Mafia
-team add Citizen
 
 #?� 기본 ?�션
 team modify Mafia nametagVisibility hideForOtherTeams
 team modify Mafia friendlyFire false
 team modify Mafia seeFriendlyInvisibles true
-
-team modify Citizen nametagVisibility hideForOwnTeam
-team modify Citizen friendlyFire false

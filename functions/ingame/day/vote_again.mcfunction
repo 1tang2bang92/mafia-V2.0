@@ -1,4 +1,4 @@
-tellraw @a ["\n\n",{"text":"Multiple people, "},{"selector":"@a[scores={result-vote=0}]","color":"dark_red","bold":true},{"text":" has been voted for execution.\nRequires scecondary voting.","color":"white","bold":"false"}]
+tellraw @a [{"translate":"mafia.system.chatui.top"},"\n\n\n\n",{"translate":"mafia.game.vote_again.text0"},{"selector":"@a[scores={result-vote=0}]","color":"dark_red","bold":true},{"translate":"mafia.game.vote_again.text1"},"\n\n\n\n",{"translate":"mafia.system.chatui.bot"}]
 scoreboard players set voteCount master 0
 scoreboard players set @a[scores={result-vote=0}] voted 0
 scoreboard players set @a[scores={result-vote=0}] candidate 0

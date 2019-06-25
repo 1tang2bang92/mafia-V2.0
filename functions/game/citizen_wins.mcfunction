@@ -1,4 +1,4 @@
-title @a title ["",{"text":"Citizen","color":"gold","bold":true},{"text":" Wins!","color":"white","bold":true}]
-tellraw @a ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"text":" The Winners are; ","color":"white","bold":false},{"selector":"@a[tag=player,team=Citizen]","color":"gold","bold":true},{"text":"!","color":"white","bold":false}]
+title @a title ["",{"translate":"mafia.game.win.citizen"}]
+tellraw @a ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"translate":"mafia.game.win.chat"},{"selector":"@a[tag=player,tag=team_Citizen]","color":"gold","bold":true}]
 scoreboard players set GameStatus master 1
 schedule function mafia:game/end 15s

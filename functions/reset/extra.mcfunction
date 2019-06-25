@@ -11,4 +11,7 @@ tag @a[tag=robber-target] remove robber-target
 tag @a[tag=police-target] remove police-target
 tag @a[tag=spy-target] remove spy-target
 
+tag @a[tag=team_Citizen] remove team_Citizen
+
 kill @e[name=TimeStamp]
+kill @e[tag=Scan]

@@ -8,12 +8,11 @@ effect give @s minecraft:invisibility 100000 255
 effect give @s minecraft:speed 100000 5 true
 effect give @s minecraft:regeneration 100000 1 true
 effect give @s minecraft:haste 100000 2 true
-#execute if @s[scores={invisible=1}] as @a[team=!Mafia] run summon armor_stand ~ ~ ~ {}
-tellraw @s[scores={invisible=1}] ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true},{"text":" 은신","color":"white","bold":false},{"text":"상태로 전환되었습니다.","color":"gold"}]
+tellraw @s[scores={invisible=1}] ["\n",{"translate":"mafia.system.chatui.top"},"\n\n",{"translate":"mafia.game.mafia.invisible.on"},"\n\n",{"translate":"mafia.system.chatui.bot"}]
 
 #은신 상태일때 (scores={invisible=0})
 effect clear @s[scores={invisible=0}] minecraft:invisibility
 effect clear @s[scores={invisible=0}] minecraft:speed
 effect clear @s[scores={invisible=0}] minecraft:regeneration
 effect clear @s[scores={invisible=0}] minecraft:haste
-tellraw @s[scores={invisible=0}] ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true},{"text":" 은신","color":"red","bold":false},{"text":"상태가 풀렸습니다.","color":"gold"}]
+tellraw @s[scores={invisible=0}] ["\n",{"translate":"mafia.system.chatui.top"},"\n\n",{"translate":"mafia.game.mafia.invisible.off"},"\n\n",{"translate":"mafia.system.chatui.bot"}]

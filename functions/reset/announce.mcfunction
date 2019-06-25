@@ -1,1 +1,1 @@
-tellraw @a ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true,"insertion":"/tellraw @p %s"},{"text":" Mafia game system reloaded","color":"gold","bold":false}]
+tellraw @a ["\n",{"translate":"mafia.system.chatui.top"},"\n",{"text":" Mafia game system reloaded","color":"gold","bold":false},"\n",{"translate":"mafia.system.chatui.bot"}]

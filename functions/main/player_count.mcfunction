@@ -1,2 +1,2 @@
 execute store result score MafiaCount master run xp add @a[team=Mafia,tag=player,nbt=!{Health:0f}] 0 points
-execute store result score CitizenCount master run xp add @a[team=Citizen,tag=player,nbt=!{Health:0f}] 0 points
+execute store result score CitizenCount master run xp add @a[tag=team_Citizen,tag=player,nbt=!{Health:0f}] 0 points

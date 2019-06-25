@@ -1,7 +1,7 @@
 execute as @e[name=TimeStamp] if score @s TS-user = @p[distance=0] TS-user run tag @s add DR-TS
 execute as @a if score @s Id = @e[tag=DR-TS,limit=1] TS-user run tag @s add DR-user
 execute as @a if score @s Id = @e[tag=DR-TS,limit=1] TS-victim run tag @s add DR-victim
-tellraw @p[distance=0] ["",{"text":"[Mafia V2.0]","color":"aqua","bold":true},{"selector":"@p[tag=DR-user]","color":"red","bold":true},{"text":"가 ","color":"white","bold":false},{"selector":"@p[tag=DR-victim]","color":"green","bold":true},{"text":"에게 자신의 능력을 사용했습니다.","color":"white","bold":false},{"text":"\n   능력사용시간:","color":"gold","bold":true},{"score":{"name":"@e[tag=DR-TS,limit=1]","objective":"TS-time","bold":false}}]
+tellraw @p[distance=0] [{"translate":"mafia.system.chatui.top"},"\n\n\n\n",{"selector":"@p[tag=DR-user]","color":"red","bold":true},{"translate":"mafia.game.detective.report.text0"},{"selector":"@p[tag=DR-victim]","color":"green","bold":true},{"translate":"mafia.game.detective.report.text1"},{"score":{"name":"@e[tag=DR-TS,limit=1]","objective":"TS-time-h","bold":false}},":",{"score":{"name":"@e[tag=DR-TS,limit=1]","objective":"TS-time-m","bold":false}},"\n\n\n\n",{"translate":"mafia.system.chatui.bot"}]
 tag @p[distance=0] remove used-abil
 scoreboard players reset @p[distance=0] TS-user
 tag @a[tag=DR-user] remove DR-user

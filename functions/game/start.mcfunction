@@ -43,19 +43,24 @@ execute as @a unless entity @s[scores={job-detective=1}] run scoreboard players 
 execute as @a unless entity @s[scores={job-drugaddict=1}] run scoreboard players set @s job-drugaddict 0
 execute as @a unless entity @s[scores={job-citizen=1}] run scoreboard players set @s job-citizen 0
 
+function mafia:option/map_set
+function mafia:game/start_load
+
+kill @e[type=item]
+
 tp @e[type=minecraft:player] 1108 200 1125
 
 team join Mafia @a[scores={job-mafia=1}]
-team join Citizen @a[scores={job-solider=1}]
-team join Citizen @a[scores={job-citizen=1}]
-team join Citizen @a[scores={job-spy=1}]
-team join Citizen @a[scores={job-police=1}]
-team join Citizen @a[scores={job-doctor=1}]
-team join Citizen @a[scores={job-robber=1}]
-team join Citizen @a[scores={job-reporter=1}]
-team join Citizen @a[scores={job-politician=1}]
-team join Citizen @a[scores={job-detective=1}]
-team join Citizen @a[scores={job-drugaddict=1}]
+tag @a[scores={job-solider=1}] add team_Citizen
+tag @a[scores={job-citizen=1}] add team_Citizen
+tag @a[scores={job-spy=1}] add team_Citizen
+tag @a[scores={job-police=1}] add team_Citizen
+tag @a[scores={job-doctor=1}] add team_Citizen
+tag @a[scores={job-robber=1}] add team_Citizen
+tag @a[scores={job-reporter=1}] add team_Citizen
+tag @a[scores={job-politician=1}] add team_Citizen
+tag @a[scores={job-detective=1}] add team_Citizen
+tag @a[scores={job-drugaddict=1}] add team_Citizen
 
 #�÷��̾� Ȯ��
 execute positioned 1108 200 1125 run tag @a[distance=..5,tag=!player,gamemode=adventure] add player
@@ -77,7 +82,7 @@ execute if entity @p[tag=player,scores={Id=..0}] run function mafia:game/start_i
 
 #�ȳ�
 function mafia:game/start_announce
-function mafia:ingame/night/ability
+execute as @a[tag=player] at @s run function mafia:ingame/night/ability
 #����Ʈ Ŭ����
 effect clear @a[tag=player] minecraft:resistance
 
@@ -87,6 +92,7 @@ execute if score GameStatus master matches 2 run schedule function mafia:main/ti
 scoreboard players set @a cool 0
 scoreboard players set @a master 0
 scoreboard players set @a invisible 0
+scoreboard players set 1000 master 1000
 
 recipe give @a[tag=player] *
 recipe take @a[scores={job-mafia=0}] mafia:wooden_sword
@@ -98,3 +104,7 @@ give @a minecraft:wooden_axe
 give @a minecraft:wooden_pickaxe
 give @a minecraft:wooden_shovel
 give @a minecraft:bread 16
+
+bossbar set mafia:dawn players @a[tag=player]
+bossbar set mafia:midnight players @a[tag=player]
+bossbar set mafia:twilight players @a[tag=player]

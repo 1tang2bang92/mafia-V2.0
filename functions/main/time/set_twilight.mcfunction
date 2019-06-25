@@ -6,8 +6,8 @@ scoreboard players set voteCount master 0
 scoreboard players set @a candidate 0
 scoreboard players set @a voted 0
 scoreboard players reset @a result-vote
-title @a title ["",{"text":"The "},{"text":"Night ","color":"dark_red"},{"text":"has begun!","color":"white"}]
-title @a subtitle [""]
+title @a subtitle ["",{"translate":"mafia.game.time.night"}]
+title @a title [""]
 
 #drug-addict
 function mafia:ingame/day/drug-addict
