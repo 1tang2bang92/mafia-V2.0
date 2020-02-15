@@ -1,10 +1,20 @@
 execute if entity @s[scores={job-mafia=1}] run give @s carrot_on_a_stick{CustomModelData:1,Enchantments:[{id:"vanishing_curse",lvl:1}],display:{Name:"[{\"translate\":\"mafia.ability.name.mafia\"},{\"translate\":\"mafia.item.name\"}]",Lore:["{\"translate\":\"mafia.item.lore.mafia0\",\"color\":\"gray\",\"italic\":\"false\"}","{\"translate\":\"mafia.item.lore.mafia1\",\"color\":\"gray\",\"italic\":\"false\"}"]}} 1
+execute if entity @s[scores={job-mafia=1}] run advancement grant @s only mafia:mafia
 execute if entity @s[scores={job-police=1}] run give @s carrot_on_a_stick{CustomModelData:2,Enchantments:[{id:"vanishing_curse",lvl:1}],display:{Name:"[{\"translate\":\"mafia.ability.name.police\"},{\"translate\":\"mafia.item.name\"}]",Lore:["{\"translate\":\"mafia.item.lore.police\",\"color\":\"gray\",\"italic\":\"false\"}"]}} 1
+execute if entity @s[scores={job-police=1}] run advancement grant @s only mafia:police
 execute if entity @s[scores={job-doctor=1}] run give @s carrot_on_a_stick{CustomModelData:3,Enchantments:[{id:"vanishing_curse",lvl:1}],display:{Name:"[{\"translate\":\"mafia.ability.name.doctor\"},{\"translate\":\"mafia.item.name\"}]",Lore:["{\"translate\":\"mafia.item.lore.doctor\",\"color\":\"gray\",\"italic\":\"false\"}"]}} 1
+execute if entity @s[scores={job-doctor=1}] run advancement grant @s only mafia:doctor
 execute if entity @s[scores={job-spy=1}] run give @s carrot_on_a_stick{CustomModelData:4,Enchantments:[{id:"vanishing_curse",lvl:1}],display:{Name:"[{\"translate\":\"mafia.ability.name.spy\"},{\"translate\":\"mafia.item.name\"}]",Lore:["{\"translate\":\"mafia.item.lore.spy\",\"color\":\"gray\",\"italic\":\"false\"}"]}} 1
+execute if entity @s[scores={job-spy=1}] run advancement grant @s only mafia:spy
 execute if entity @s[scores={job-soldier=1}] run give @s carrot_on_a_stick{CustomModelData:5,Enchantments:[{}],display:{Name:"[{\"translate\":\"mafia.ability.name.soldier\"},{\"translate\":\"mafia.item.name\"}]",Lore:["{\"translate\":\"mafia.item.lore.soldier\",\"color\":\"gray\",\"italic\":\"false\"}"]}} 1
+execute if entity @s[scores={job-soldier=1}] run advancement grant @s only mafia:soldier
 execute if entity @s[scores={job-politician=1}] run give @s carrot_on_a_stick{CustomModelData:6,Enchantments:[{id:"vanishing_curse",lvl:1}],display:{Name:"[{\"translate\":\"mafia.ability.name.politician\"},{\"translate\":\"mafia.item.name\"}]"}} 1
+execute if entity @s[scores={job-politician=1}] run advancement grant @s only mafia:politician
 execute if entity @s[scores={job-reporter=1}] run give @s carrot_on_a_stick{CustomModelData:7,Enchantments:[{id:"vanishing_curse",lvl:1}],display:{Name:"[{\"translate\":\"mafia.ability.name.reporter\"},{\"translate\":\"mafia.item.name\"}]",Lore:["{\"translate\":\"mafia.item.lore.reporter\",\"color\":\"gray\",\"italic\":\"false\"}"]}} 1
+execute if entity @s[scores={job-reporter=1}] run advancement grant @s only mafia:reporter
 execute if entity @s[scores={job-robber=1}] run give @s carrot_on_a_stick{CustomModelData:8,Enchantments:[{id:"vanishing_curse",lvl:1}],display:{Name:"[{\"translate\":\"mafia.ability.name.robber\"},{\"translate\":\"mafia.item.name\"}]",Lore:["{\"translate\":\"mafia.item.lore.robber\",\"color\":\"gray\",\"italic\":\"false\"}"]}} 1
+execute if entity @s[scores={job-robber=1}] run advancement grant @s only mafia:robber
 execute if entity @s[scores={job-detective=1}] run give @s carrot_on_a_stick{CustomModelData:9,Enchantments:[{id:"vanishing_curse",lvl:1}],display:{Name:"[{\"translate\":\"mafia.ability.name.detective\"},{\"translate\":\"mafia.item.name\"}]",Lore:["{\"translate\":\"mafia.item.lore.detective\",\"color\":\"gray\",\"italic\":\"false\"}"]}} 1
+execute if entity @s[scores={job-detective=1}] run advancement grant @s only mafia:detective
 execute if entity @s[scores={job-drugaddict=1}] run give @s carrot_on_a_stick{CustomModelData:10,Enchantments:[{id:"vanishing_curse",lvl:1}],display:{Name:"[{\"translate\":\"mafia.ability.name.drugaddict\"},{\"translate\":\"mafia.item.name\"}]"}} 1
+execute if entity @s[scores={job-drugaddict=1}] run advancement grant @s only mafia:drugaddict

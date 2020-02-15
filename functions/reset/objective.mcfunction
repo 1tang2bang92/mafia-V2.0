@@ -4,7 +4,7 @@ gamerule commandBlockOutput false
 gamerule doDaylightCycle false
 gamerule doEntityDrops false
 gamerule doFireTick false
-gamerule doLimitedCrafting false
+gamerule doLimitedCrafting true
 gamerule doMobLoot false
 gamerule doMobSpawning false
 gamerule doTileDrops true
@@ -35,6 +35,7 @@ scoreboard objectives remove result-vote
 scoreboard objectives remove rightC
 scoreboard objectives remove LT
 scoreboard objectives remove master
+scoreboard objectives remove fall_dist
 scoreboard objectives remove Timer
 scoreboard objectives remove candidate
 scoreboard objectives remove invisible
@@ -48,6 +49,8 @@ scoreboard objectives remove TS-victim
 scoreboard objectives remove TS-time-h
 scoreboard objectives remove TS-time-m
 scoreboard objectives remove button
+scoreboard objectives remove tut-kill
+scoreboard objectives remove game-exit
 
 #�� �����?
 team remove Mafia
@@ -73,6 +76,7 @@ scoreboard objectives add invisible dummy
 scoreboard objectives add deathCount deathCount
 scoreboard objectives add cool dummy
 scoreboard objectives add Id dummy
+scoreboard objectives add fall_dist dummy "Fall Distance"
 
 scoreboard objectives add TS-user dummy "Time Stamp - User Id"
 scoreboard objectives add TS-victim dummy "Time Stamp - Victim Id"
@@ -88,6 +92,9 @@ scoreboard objectives add detail dummy
 
 scoreboard objectives add button trigger "What you've pressed"
 
+scoreboard objectives add tut-kill minecraft.killed:minecraft.villager "Tutorial kill check"
+scoreboard objectives add game-exit minecraft.dropped:minecraft.barrier "Exit Game"
+
 scoreboard players set PT3 master 3
 scoreboard players set GameStatus master 1
 scoreboard players set TimeStatus master 1
@@ -98,11 +105,15 @@ scoreboard players set GameLength master 5
 scoreboard players set tw_left master 16000
 scoreboard players set md_left master 20000
 scoreboard players set dn_left master 24000
+scoreboard players set SkipPlayerCount master 0
 
 scoreboard players set @a cool 0
 scoreboard players set @a rightC 0
 scoreboard players set @a Id 0
-scoreboard players set invisible 0
+scoreboard players set @a invisible 0
+
+scoreboard players set fog master 0
+scoreboard players set tip master 1
 
 scoreboard players set 6 master 6
 scoreboard players set 100 master 100
@@ -115,25 +126,31 @@ scoreboard players set Time-Minute master 0
 bossbar remove mafia:twilight
 bossbar remove mafia:midnight
 bossbar remove mafia:dawn
+bossbar remove mafia:vote
 
 bossbar add mafia:twilight "Until Kill Time"
 bossbar add mafia:midnight "Kill Time"
 bossbar add mafia:dawn "Until Sunrise"
+bossbar add mafia:vote "Until Vote Time"
 
 bossbar set mafia:twilight color yellow
 bossbar set mafia:midnight color red
 bossbar set mafia:dawn color green
+bossbar set mafia:vote color white
 
 bossbar set mafia:twilight max 4000
 bossbar set mafia:midnight max 4000
 bossbar set mafia:dawn max 4000
+bossbar set mafia:vote max 1200
 
 bossbar set mafia:twilight players @a
 bossbar set mafia:midnight players @a
 bossbar set mafia:dawn players @a
+bossbar set mafia:vote players @a
 bossbar set mafia:twilight visible false
 bossbar set mafia:midnight visible false
 bossbar set mafia:dawn visible false
+bossbar set mafia:vote visible false
 
 #�� ����
 team add Mafia

@@ -1,4 +1,5 @@
 tp @a 0 100 0
+time set midnight
 gamemode adventure @a
 function mafia:reset/objective
 function mafia:reset/extra

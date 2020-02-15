@@ -1,0 +1,1 @@
+execute if score fog master matches 1 at @s anchored eyes run particle minecraft:campfire_cosy_smoke ^ ^ ^4 3 2 3 0 30 normal @s

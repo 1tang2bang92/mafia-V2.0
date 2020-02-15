@@ -11,6 +11,7 @@ team join Mafia @s
 tag @s remove team_Citizen
 scoreboard players set @s job-spy 0
 scoreboard players set @s master 0
+advancement revoke @s everything
 tellraw @s ["\n",{"translate":"mafia.system.chatui.top"},"\n",{"translate":"mafia.game.spy.success"},"\n",{"translate":"mafia.system.chatui.bot"}]
 clear @s carrot_on_a_stick{CustomModelData:4} 1
 function mafia:ingame/night/ability

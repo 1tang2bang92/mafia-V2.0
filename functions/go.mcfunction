@@ -7,6 +7,9 @@ execute if score GameStatus master matches 1 store result score TotalPlayerCount
 execute as @a[x=-4,y=105,z=37,dx=8,dy=8,dz=1,gamemode=adventure] run tellraw @a ["",{"selector":"@s","bold":true},{"text":" has join the game","color":"dark_gray","bold":false}]
 execute as @a[x=-4,y=105,z=37,dx=8,dy=8,dz=1,gamemode=adventure] run effect clear @s
 execute as @a[x=-4,y=105,z=37,dx=8,dy=8,dz=1,gamemode=adventure] run clear @s
+
+execute if score GameStatus master matches 3.. run gamemode spectator @a[tag=!player,gamemode=!spectator,x=-4,y=105,z=37,dx=8,dy=8,dz=1]
+
 execute if score GameStatus master matches 1 run tp @a[x=-4,y=105,z=37,dx=8,dy=8,dz=1] 1108 200 1125
 execute if score GameStatus master matches 1 run tp @a[x=-4,y=105,z=-37,dx=8,dy=8,dz=1] -1001 104 -1000
 execute if score GameStatus master matches 1 run tp @a[x=-37,y=105,z=4,dx=1,dy=8,dz=-8] -215 101 -7 ~180 ~
@@ -14,10 +17,21 @@ execute if score GameStatus master matches 1 run tp @a[x=37,y=105,z=-4,dx=1,dy=8
 execute if score GameStatus master matches 1 store result score CurrentPlayerCount master run xp add @a[gamemode=adventure,x=1090,y=199,z=1106,dx=45,dz=42,dy=5] 0 points
 execute unless score GameStatus master matches 1..2 store result score CurrentPlayerCount master run xp add @a[gamemode=adventure,tag=player] 0 points
 
+execute if score GameStatus master matches 1 run tp @a[x=1090,y=199,z=1106,dx=45,dz=42,dy=5,scores={game-exit=1..}] 0 100 0
+execute if score GameStatus master matches 1 run replaceitem entity @a[x=1090,y=199,z=1106,dx=45,dz=42,dy=5] hotbar.0 minecraft:barrier{display:{Name:"[{\"translate\":\"mafia.system.game-exit1\",\"with\":[{\"keybind\":\"key.drop\"}]}]"}}
+execute if score GameStatus master matches 1 run title @a[x=1090,y=199,z=1106,dx=45,dz=42,dy=5] actionbar ["",{"translate":"mafia.system.game-exit2"}]
+kill @e[type=item,nbt={Item:{id:"minecraft:barrier"}},x=1090,y=199,z=1106,dx=45,dz=42,dy=5]
+
 #�����ο����� �÷��̾���� ������ ���ӽ��� ��� ����(GameStatus=1)
 execute if score GameStatus master matches 1 if score TotalPlayerCount master matches 4.. if score TotalPlayerCount master = CurrentPlayerCount master run scoreboard players set CountDown master 100
 execute if score GameStatus master matches 1 if score TotalPlayerCount master matches 4.. if score TotalPlayerCount master = CurrentPlayerCount master run scoreboard players set GameStatus master 2
 execute if score GameStatus master matches 2 if score TotalPlayerCount master = CurrentPlayerCount master run function mafia:game/start_countdown
+
+#(GameStatus=2)
+#execute if score GameStatus master matches 2 if entity @p[tag=!player,gamemode=adventure] run gamemode spectator @a[tag=!player,gamemode=adventure]
+#execute if score GameStatus master matches 2 if entity @p[tag=!player,gamemode=survival] run gamemode spectator @a[tag=!player,gamemode=survival]
+
+
 
 #������ ������ �÷��̾�� ����(GameStatus>=3)
 execute if score GameStatus master matches 3.. store result score CurrentPlayerCount master run xp add @a[tag=player] 0 points
@@ -49,3 +63,12 @@ scoreboard players operation Time-Minute master = Time master
 scoreboard players operation Time-Minute master %= 1000 master
 scoreboard players operation Time-Minute master *= 6 master
 scoreboard players operation Time-Minute master /= 100 master
+
+execute if score GameStatus master matches 1 run function mafia:tutorial/main
+
+execute as @a store result score @s fall_dist run data get entity @s FallDistance
+execute as @a[scores={fall_dist=3..}] run effect give @s minecraft:resistance 1 5 true
+
+scoreboard players set @a[scores={game-exit=1..}] game-exit 0
+
+execute if entity @p[nbt={Inventory:[{tag:{error:1b}}]}] run schedule function mafia:game/error 5s 

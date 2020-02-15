@@ -15,3 +15,5 @@ tag @a[tag=team_Citizen] remove team_Citizen
 
 kill @e[name=TimeStamp]
 kill @e[tag=Scan]
+
+advancement revoke @a everything

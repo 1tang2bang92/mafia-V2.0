@@ -1,0 +1,1 @@
+tellraw @s [{"translate":"mafia.system.chatui.top"},"\n\n\n\n",{"translate":"mafia.tutorial.recipe.text5"},"\n\n\n",{"translate":"mafia.tutorial.button.previous","clickEvent":{"action":"run_command","value":"/trigger button add -3"}},"\n\n",{"translate":"mafia.system.chatui.bot"}]

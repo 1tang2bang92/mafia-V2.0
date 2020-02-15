@@ -11,8 +11,8 @@ scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citize
 tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-spy 1
 tag @p[tag=!player,gamemode=adventure,scores={job-spy=1}] add player
-scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citizen 1
-tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
+scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-mafia 1
+tag @p[tag=!player,gamemode=adventure,scores={job-mafia=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-citizen 1
 tag @p[tag=!player,gamemode=adventure,scores={job-citizen=1}] add player
 scoreboard players set @p[tag=!player,sort=random,gamemode=adventure] job-soldier 1
@@ -45,7 +45,6 @@ execute as @a unless entity @s[scores={job-citizen=1}] run scoreboard players se
 
 function mafia:option/map_set
 function mafia:game/start_load
-
 kill @e[type=item]
 
 tp @e[type=minecraft:player] 1108 200 1125
@@ -81,6 +80,7 @@ scoreboard players set @r[tag=player,scores={Id=..0}] Id 1
 execute if entity @p[tag=player,scores={Id=..0}] run function mafia:game/start_id
 
 #�ȳ�
+clear @a[tag=player]
 function mafia:game/start_announce
 execute as @a[tag=player] at @s run function mafia:ingame/night/ability
 #����Ʈ Ŭ����
@@ -100,6 +100,7 @@ recipe take @a[scores={job-mafia=0}] mafia:stone_sword
 recipe take @a[scores={job-mafia=0}] mafia:iron_sword
 recipe take @a[scores={job-mafia=0}] mafia:golden_sword
 
+give @a[team=Mafia] stone_sword
 give @a minecraft:wooden_axe
 give @a minecraft:wooden_pickaxe
 give @a minecraft:wooden_shovel

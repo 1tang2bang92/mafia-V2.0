@@ -1,0 +1,2 @@
+summon zombie -1021 101 -1001 { Silent:1b,IsBaby:1,Attributes:[{Name:generic.maxHealth,Base:10000}],NoAI:1,Health:10000.0f,Rotation:[90f,0f],ArmorItems:[{},{},{},{}],NoGravity:1, CustomNameVisible:1,CustomName:"{\"text\":\"Fog : OFF\"}",Tags:["perf","zombie","fog"]}
+summon zombie -1021 101 -999 { Silent:1b,IsBaby:1,Attributes:[{Name:generic.maxHealth,Base:10000}],NoAI:1,Health:10000.0f,Rotation:[90f,0f],ArmorItems:[{},{},{},{}],NoGravity:1, CustomNameVisible:1,CustomName:"{\"text\":\"Tips : ON\"}",Tags:["perf","zombie","tip"]}

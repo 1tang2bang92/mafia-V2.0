@@ -12,4 +12,4 @@ scoreboard players operation @s TS-user = @p[distance=0] Id
 
 scoreboard players set @s master 6
 
-tellraw @s ["\n",{"translate":"mafia.system.chatui.top"},"\n",{"selector":"@p[distance=0]","color":"blue","bold":false},{"translate":"mafia.game.detective.search"},"\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s ["\n",{"translate":"mafia.system.chatui.top"},"\n",{"translate":"mafia.game.detective.search","with":[{"selector":"@p[distance=0]","color":"blue","bold":false}]},"\n",{"translate":"mafia.system.chatui.bot"}]

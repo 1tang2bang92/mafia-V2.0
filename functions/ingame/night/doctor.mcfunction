@@ -7,6 +7,8 @@ tag @e[name=TimeStamp,tag=undefined,limit=1] remove undefined
 
 tag @s add doctor-target
 
+scoreboard players set @s master 0
+gamemode survival @s
 tag @s remove death
 clear @s minecraft:music_disc_11{placeholder:1b}
 function mafia:ingame/night/ability
@@ -16,6 +18,6 @@ tag @p[scores={job-doctor=1}] add used-abil
 
 scoreboard players set @p[scores={job-doctor=1}] master 0
 
-tellraw @s ["\n",{"translate":"mafia.system.chatui.top"},"\n\n",{"translate":"mafia.ability.name.doctor","color":"white","bold":true},{"translate":"mafia.game.doctor.revive"},"\n\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s ["\n",{"translate":"mafia.system.chatui.top"},"\n\n",{"translate":"mafia.game.doctor.revive","with":[{"translate":"mafia.ability.name.doctor","color":"white","bold":true}]},"\n\n",{"translate":"mafia.system.chatui.bot"}]
 
 tag @s remove doctor-target

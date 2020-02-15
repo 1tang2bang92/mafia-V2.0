@@ -26,7 +26,7 @@ tellraw @a[tag=player,scores={job-detective=1}] [{"translate":"mafia.system.abil
 tellraw @a[tag=player,scores={job-robber=1}] [{"translate":"mafia.system.ability.text0"},{"translate":"mafia.system.ability.name.robber","hoverEvent":{"action":"show_text","value":{"translate":"mafia.system.ability.hover2.robber"}}},{"translate":"mafia.system.ability.text1"},{"translate":"mafia.system.ability.text3","hoverEvent":{"action":"show_text","value":{"translate":"mafia.system.ability.hover.robber"}}},{"translate":"mafia.system.ability.help.robber","color":"light_gray"}]
 tellraw @a[tag=player,scores={job-drugaddict=1}] [{"translate":"mafia.system.ability.text0"},{"translate":"mafia.system.ability.name.drugaddict","hoverEvent":{"action":"show_text","value":{"translate":"mafia.system.ability.hover2.drugaddict"}}},{"translate":"mafia.system.ability.text1"},{"translate":"mafia.system.ability.text3","hoverEvent":{"action":"show_text","value":{"translate":"mafia.system.ability.hover.drugaddict"}}},{"translate":"mafia.system.ability.help.drugaddict","color":"light_gray"}]
 
-tellraw @a[tag=player] [{"translate":"mafia.system.ability.text4"}]
+tellraw @a[tag=player] [{"translate":"mafia.system.ability.text4","with":[{"keybind":"key.advancements"}]}]
 tellraw @a[tag=player] ["\n",{"translate":"mafia.system.chatui.bot"}]
 
 

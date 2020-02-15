@@ -29,17 +29,18 @@ scoreboard players set @s rightC 0
 team join Mafia @s[scores={job-mafia=1}]
 tag @s[scores={job-mafia=1}] remove team_Citizen
 
-tellraw @s ["\n",{"translate":"mafia.system.chatui.top"},{"selector":"@p[distance=0]"},{"translate":"mafia.game.robber.text0"},"\n"]
+advancement revoke @s everything
+tellraw @s ["\n",{"translate":"mafia.system.chatui.top"},{"translate":"mafia.game.robber.text0","with":[{"selector":"@p[distance=0]"}]},"\n"]
 clear @s carrot_on_a_stick{CustomModelData:8} 1
 function mafia:ingame/night/ability
-tellraw @s[scores={job-mafia=1}] ["\n",{"translate":"mafia.game.robber.text1"},{"translate":"mafia.ability.name.mafia"},{"translate":"mafia.game.robber.text2"},"\n",{"translate":"mafia.system.chatui.bot"}]
-tellraw @s[scores={job-citizen=1}] ["\n",{"translate":"mafia.game.robber.text1"},{"translate":"mafia.ability.name.citizen"},{"translate":"mafia.game.robber.text2"},"\n",{"translate":"mafia.system.chatui.bot"}]
-tellraw @s[scores={job-police=1}] ["\n",{"translate":"mafia.game.robber.text1"},{"translate":"mafia.ability.name.police"},{"translate":"mafia.game.robber.text2"},"\n",{"translate":"mafia.system.chatui.bot"}]
-tellraw @s[scores={job-doctor=1}] ["\n",{"translate":"mafia.game.robber.text1"},{"translate":"mafia.ability.name.doctor"},{"translate":"mafia.game.robber.text2"},"\n",{"translate":"mafia.system.chatui.bot"}]
-tellraw @s[scores={job-spy=1}] ["\n",{"translate":"mafia.game.robber.text1"},{"translate":"mafia.ability.name.spy"},{"translate":"mafia.game.robber.text2"},"\n",{"translate":"mafia.system.chatui.bot"}]
-tellraw @s[scores={job-soldier=1}] ["\n",{"translate":"mafia.game.robber.text1"},{"translate":"mafia.ability.name.soldier"},{"translate":"mafia.game.robber.text2"},"\n",{"translate":"mafia.system.chatui.bot"}]
-tellraw @s[scores={job-politician=1}] ["\n",{"translate":"mafia.game.robber.text1"},{"translate":"mafia.ability.name.politician"},{"translate":"mafia.game.robber.text2"},"\n",{"translate":"mafia.system.chatui.bot"}]
-tellraw @s[scores={job-reporter=1}] ["\n",{"translate":"mafia.game.robber.text1"},{"translate":"mafia.ability.name.reporter"},{"translate":"mafia.game.robber.text2"},"\n",{"translate":"mafia.system.chatui.bot"}]
-tellraw @s[scores={job-detective=1}] ["\n",{"translate":"mafia.game.robber.text1"},{"translate":"mafia.ability.name.detective"},{"translate":"mafia.game.robber.text2"},"\n",{"translate":"mafia.system.chatui.bot"}]
-tellraw @s[scores={job-drugaddict=1}] ["\n",{"translate":"mafia.game.robber.text1"},{"translate":"mafia.ability.name.drugaddict"},{"translate":"mafia.game.robber.text2"},"\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s[scores={job-mafia=1}] ["\n",{"translate":"mafia.game.robber.text1","with":[{"translate":"mafia.ability.name.mafia"}]},"\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s[scores={job-citizen=1}] ["\n",{"translate":"mafia.game.robber.text1","with":[{"translate":"mafia.ability.name.citizen"}]},"\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s[scores={job-police=1}] ["\n",{"translate":"mafia.game.robber.text1","with":[{"translate":"mafia.ability.name.police"}]},"\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s[scores={job-doctor=1}] ["\n",{"translate":"mafia.game.robber.text1","with":[{"translate":"mafia.ability.name.doctor"}]},"\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s[scores={job-spy=1}] ["\n",{"translate":"mafia.game.robber.text1","with":[{"translate":"mafia.ability.name.spy"}]},"\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s[scores={job-soldier=1}] ["\n",{"translate":"mafia.game.robber.text1","with":[{"translate":"mafia.ability.name.soldier"}]},"\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s[scores={job-politician=1}] ["\n",{"translate":"mafia.game.robber.text1","with":[{"translate":"mafia.ability.name.politician"}]},"\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s[scores={job-reporter=1}] ["\n",{"translate":"mafia.game.robber.text1","with":[{"translate":"mafia.ability.name.reporter"}]},"\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s[scores={job-detective=1}] ["\n",{"translate":"mafia.game.robber.text1","with":[{"translate":"mafia.ability.name.detective"}]},"\n",{"translate":"mafia.system.chatui.bot"}]
+tellraw @s[scores={job-drugaddict=1}] ["\n",{"translate":"mafia.game.robber.text1","with":[{"translate":"mafia.ability.name.drugaddict"}]},"\n",{"translate":"mafia.system.chatui.bot"}]
 tag @p[distance=0] remove robber-target

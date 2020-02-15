@@ -8,6 +8,8 @@ effect give @s minecraft:invisibility 100000 255
 effect give @s minecraft:speed 100000 5 true
 effect give @s minecraft:regeneration 100000 1 true
 effect give @s minecraft:haste 100000 2 true
+execute if score Date master matches 1 run effect give @s minecraft:strength 100000 0 true
+execute if score Date master matches 2.. run effect give @s minecraft:strength 100000 1 true
 tellraw @s[scores={invisible=1}] ["\n",{"translate":"mafia.system.chatui.top"},"\n\n",{"translate":"mafia.game.mafia.invisible.on"},"\n\n",{"translate":"mafia.system.chatui.bot"}]
 
 #은신 상태일때 (scores={invisible=0})

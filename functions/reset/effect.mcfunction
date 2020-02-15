@@ -30,5 +30,5 @@ effect clear @a minecraft:water_breathing
 effect clear @a minecraft:weakness
 effect clear @a minecraft:wither
 
-effect give @a minecraft:instant_health 1 255 true
+effect give @a minecraft:instant_health 10 10 true
 effect give @a minecraft:resistance 100000 5 true
